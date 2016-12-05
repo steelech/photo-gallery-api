@@ -1,11 +1,8 @@
 class CodeController < ApplicationController
+	before_action :authenticate_user_from_token!
+	before_action :authenticate_user!
 	def index
-		puts "request: #{request.headers['Authorization']}"
-		if request.headers['Authorization'] == "Bearer some bs"
-			@codes = Code.all
-			render json: @codes, status: 200
-		else
-			render json: {}, status: 404
-		end
+		@codes = Code.all
+		render json: @codes, status: 200
 	end
 end
