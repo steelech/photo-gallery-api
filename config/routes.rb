@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   get '/login', to: 'login#show'
   get '/codes', to: 'code#index'
   post '/token', to: 'token#show'
+  get '/albums', to: 'albums#index'
+  get '/pictures', to: 'pictures#index'
 
 end
