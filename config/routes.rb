@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   post '/token', to: 'token#show'
   get '/albums', to: 'albums#index'
   get '/pictures', to: 'pictures#index'
+  get '/cognito', to: 'cognito#index'
+  post '/pictures', to: 'pictures#create'
 
 end

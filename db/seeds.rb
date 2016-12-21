@@ -4,7 +4,7 @@ count = 0
 (0..3).each do |index|
 	album = Album.create!(name: "Album #{index}")	
 	(0..4).each do |index|
-		album.pictures.create!(name: "Song #{count}")
+		album.pictures.create!(name: "Picture #{count}")
 		count +=1;
 	end
 end
