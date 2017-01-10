@@ -13,10 +13,9 @@ class PicturesController < ApplicationController
 		numFiles = params[:numFiles].to_i
 
 		render json: {}, status: 200
-		(0..numFiles).each do |file_numb|
-			puts "file: #{files[file_numb.to_s]}"
+		(0..numFiles - 1).each do |file_numb|
 			file = files[file_numb.to_s]
-			
+			Picture.create!({bucket: file[:Bucket], key: file[:Key]})
 		end
 
 	end
